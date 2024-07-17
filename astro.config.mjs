@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
-
 import tailwind from "@astrojs/tailwind";
 import mdx from '@astrojs/mdx';
+
+import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,15 +10,15 @@ export default defineConfig({
   redirects: {
     '/discord': 'https://discord.gg/zdVnRaQVzn'
   },
-  integrations: [tailwind(), mdx(
-	{
-		syntaxHighlight: 'shiki',
-		shikiConfig: {
-			themes: {
-				light: 'rose-pine-dawn',
-				dark: 'vitesse-dark'
-			}
-		}
-	}
-  )]
+  integrations: [tailwind({
+	applyBaseStyles: false,
+  }), mdx({
+    syntaxHighlight: 'shiki',
+    shikiConfig: {
+      themes: {
+        light: 'rose-pine-dawn',
+        dark: 'vitesse-dark'
+      }
+    }
+  }), solidJs()]
 });
