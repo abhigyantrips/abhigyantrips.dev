@@ -1,36 +1,15 @@
 ---
+import BaseHead from '@/components/BaseHead.astro';
+import { SITE } from '@/consts';
 import '@/styles/global.css';
 ---
 
 <!doctype html>
 <html>
   <head>
-    <meta charset='UTF-8' />
-    <meta
-      name='viewport'
-      content='width=device-width, initial-scale=1.0'
-    />
-    <meta
-      property='og:title'
-      content='Abhigyan Trips'
-    />
-    <meta
-      property='og:type'
-      content='website'
-    />
-    <meta
-      property='og:image'
-      content='/assets/profile.png'
-    />
-    <meta
-      property='og:url'
-      content='https://abhigyantrips.dev/'
-    />
-
-    <link
-      rel='icon'
-      href='favicon.ico'
-      sizes='any'
+    <BaseHead
+      title={SITE.TITLE}
+      description={SITE.DESCRIPTION}
     />
     <link
       rel='stylesheet'
