@@ -4,94 +4,91 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 220 23% 95%;
+    --foreground: 209 13% 35%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 220 12% 90%;
+    --muted-foreground: 220 12% 30%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 220 23% 92%;
+    --popover-foreground: 209 13% 25%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
+    --card: 220 23% 93%;
+    --card-foreground: 209 13% 30%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --border: 220 13% 90%;
+    --input: 220 13% 87%;
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 93 27% 38%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 93 17% 75%;
+    --secondary-foreground: 93 17% 15%;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 220 23% 80%;
+    --accent-foreground: 220 23% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 8 86% 39%;
+    --destructive-foreground: 8 86% 99%;
 
-    --info: 204 94% 94%;
-    --info-foreground: 199 89% 48%;
+    --info: var(--accent);
+    --info-foreground: var(--accent-foreground);
 
-    --success: 149 80% 90%;
-    --success-foreground: 160 84% 39%;
+    --success: var(--primary);
+    --success-foreground: var(--primary-foreground);
 
-    --warning: 48 96% 89%;
-    --warning-foreground: 25 95% 53%;
+    --warning: var(--destructive);
+    --warning-foreground: var(--destructive-foreground);
 
-    --error: 0 93% 94%;
-    --error-foreground: 0 84% 60%;
+    --error: var(--destructive);
+    --error-foreground: var(--destructive-foreground);
 
-    --ring: 240 5.9% 10%;
-
+    --ring: 93 27% 38%;
     --radius: 0.5rem;
   }
 
   .dark,
-  [data-kb-theme="dark"] {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+  [data-kb-theme='dark'] {
+    --background: 93 58% 1%;
+    --foreground: 93 13% 97%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 93 6% 8%;
+    --muted-foreground: 93 4% 65%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --popover: 93 58% 1%;
+    --popover-foreground: 93 13% 97%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --card: 93 58% 2%;
+    --card-foreground: 93 13% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --border: 93 4% 14%;
+    --input: 93 4% 14%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --primary: 93 27% 38%;
+    --primary-foreground: 0 0% 100%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --secondary: 93 19% 15%;
+    --secondary-foreground: 93 19% 75%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --accent: 93 27% 23%;
+    --accent-foreground: 93 27% 83%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 50% 52%;
+    --destructive-foreground: 0 0% 100%;
 
-    --info: 204 94% 94%;
-    --info-foreground: 199 89% 48%;
+    --info: var(--accent);
+    --info-foreground: var(--accent-foreground);
 
-    --success: 149 80% 90%;
-    --success-foreground: 160 84% 39%;
+    --success: var(--primary);
+    --success-foreground: var(--primary-foreground);
 
-    --warning: 48 96% 89%;
-    --warning-foreground: 25 95% 53%;
+    --warning: var(--destructive);
+    --warning-foreground: var(--destructive-foreground);
 
-    --error: 0 93% 94%;
-    --error-foreground: 0 84% 60%;
+    --error: var(--destructive);
+    --error-foreground: var(--destructive-foreground);
 
-    --ring: 240 4.9% 83.9%;
-
-    --radius: 0.5rem;
+    --ring: 93 27% 38%;
   }
 }
 
@@ -102,8 +99,59 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
   }
 }
 
