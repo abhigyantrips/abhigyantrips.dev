@@ -3,7 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 /**@type {import("tailwindcss").Config} */
 const config = {
   darkMode: ['class', '[data-kb-theme="dark"]'],
-  content: ['./src/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{astro,html,ts,tsx}'],
   theme: {
     container: {
       center: true,
