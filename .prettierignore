@@ -1,0 +1,13 @@
+# Deep Directories
+**/dist
+**/node_modules
+**/.vercel
+
+# Formatted by Biome
+**/*.json
+**/*.js
+**/*.ts
+**/*.tsx
+**/*.jsx
+**/*.mjs
+**/*.cjs

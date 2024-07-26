@@ -14,14 +14,14 @@ int main(void)
 	while(1)
 	{
 		for(j=0;j<50;j++)           			//50 times in Clock wise Rotation
-			clock_wise();				
-		
-		for(k=0;k<50000;k++);        			//Delay to show  anti_clock Rotation 
-		
+			clock_wise();
+
+		for(k=0;k<50000;k++);        			//Delay to show  anti_clock Rotation
+
 		for(j=0;j<50;j++)          				//50 times in  Anti Clock wise Rotation
 			anti_clock_wise();
 
-		for(k=0;k<50000;k++) ;       			//Delay to show clock Rotation 
+		for(k=0;k<50000;k++) ;       			//Delay to show clock Rotation
 	} 																	//End of while(1)
 } 																		//End of main
 void clock_wise(void)
@@ -32,7 +32,7 @@ void clock_wise(void)
 	   LPC_GPIO2->FIOCLR =  0X0000000F;
 	   LPC_GPIO2->FIOSET =  var1;
 		 var1 = var1<<1;        					//For Clockwise
-     for(k=0;k<15000;k++) ;						//for step speed variation         
+     for(k=0;k<15000;k++) ;						//for step speed variation
   }
 }
 void anti_clock_wise(void)
@@ -43,7 +43,7 @@ void anti_clock_wise(void)
 	    LPC_GPIO2->FIOCLR =  0X0000000F;
 			LPC_GPIO2->FIOSET =  var1;
 			var1 = var1>>1;      						//For Anticlockwise
-      for(k=0;k<15000;k++); 					//for step speed variation 
+      for(k=0;k<15000;k++); 					//for step speed variation
     }
 }
 ```

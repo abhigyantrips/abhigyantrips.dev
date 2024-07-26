@@ -10,7 +10,7 @@ class Student {
 
 	void assign() {
 		Scanner scanner = new Scanner(System.in);
-		
+
 		System.out.println("Enter student name: ");
 		this.name = scanner.nextLine();
 		System.out.println("Enter marks in 5 subjects: ");
@@ -25,7 +25,7 @@ class Student {
 			this.total += this.marks[i];
 		}
 		this.average = this.total / this.marks.length;
-		
+
 		System.out.println("Total and average marks computed.");
 	}
 
@@ -62,7 +62,7 @@ class Employee {
 
 	void read() {
 		Scanner scanner = new Scanner(System.in);
-		
+
 		System.out.println("Enter employee name: ");
 		this.name = scanner.nextLine();
 		System.out.println("Enter employee ID: ");
@@ -77,7 +77,7 @@ class Employee {
 		this.grossSalary = this.basic + this.da;
 		this.it = 0.3 * this.grossSalary;
 		this.netSalary = this.grossSalary + this.it;
-		
+
 		System.out.println("Gross Salary, Net Salary and IT computed.");
 	}
 

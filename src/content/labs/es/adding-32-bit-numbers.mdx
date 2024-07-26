@@ -7,7 +7,7 @@
 __Vectors
 	DCD 0X40001000
 	DCD Reset_Handler
-	
+
 	ALIGN
 	AREA	mycode, CODE, READONLY
 	ENTRY
@@ -21,7 +21,7 @@ Reset_Handler
 	ADDS R6, R1, R3
 	LDR R2, =RESULT
 	STR R6, [R2]
-	
+
 STOP
 	B STOP
 

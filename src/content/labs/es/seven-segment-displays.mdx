@@ -7,25 +7,25 @@
 
 unsigned int i, delay, count = 0, switchCount = 0;
 unsigned int display[16] = {
-		0x000003F0, 0x00000060, 0x000005B0, 0x000004F0, 
-		0x00000660, 0x000006D0, 0x000007D0, 0x00000070, 
-		0x000007F0, 0x000006F0, 0x00000770, 0x000007C0, 
+		0x000003F0, 0x00000060, 0x000005B0, 0x000004F0,
+		0x00000660, 0x000006D0, 0x000007D0, 0x00000070,
+		0x000007F0, 0x000006F0, 0x00000770, 0x000007C0,
 		0x00000390, 0x000005E0, 0x00000790, 0x00000710
 };
 
 int main(void) {
-	LPC_PINCON->PINSEL0 = 0x00000000;   
+	LPC_PINCON->PINSEL0 = 0x00000000;
 	LPC_PINCON->PINSEL1 = 0x00000000;
 	LPC_GPIO0->FIODIR =	0x00180FF0;
-	
+
 	while(1)
 	{
 		LPC_GPIO0->FIOSET |= ALLDISP;
 		LPC_GPIO0->FIOCLR =	0x00000FF0;               // Clear data lines to displays
 		LPC_GPIO0->FIOSET = display[switchCount];     // Get the 7-segment display value from array
-				
+
 		for(i = 0; i < 3; i++)
-			for(delay = 0; delay < 3000000; delay++);   
+			for(delay = 0; delay < 3000000; delay++);
 				switchCount++;
 
 		if(switchCount == 0x10)                       // If 0 to F has been displayed, reset to 0
@@ -46,25 +46,25 @@ To create a reverse version,
 
 unsigned int i, delay, count = 0, switchCount = 16;
 unsigned int display[16] = {
-		0x000003F0, 0x00000060, 0x000005B0, 0x000004F0, 
-		0x00000660, 0x000006D0, 0x000007D0, 0x00000070, 
-		0x000007F0, 0x000006F0, 0x00000770, 0x000007C0, 
+		0x000003F0, 0x00000060, 0x000005B0, 0x000004F0,
+		0x00000660, 0x000006D0, 0x000007D0, 0x00000070,
+		0x000007F0, 0x000006F0, 0x00000770, 0x000007C0,
 		0x00000390, 0x000005E0, 0x00000790, 0x00000710
 };
 
 int main(void) {
-	LPC_PINCON->PINSEL0 = 0x00000000;   
+	LPC_PINCON->PINSEL0 = 0x00000000;
 	LPC_PINCON->PINSEL1 = 0x00000000;
 	LPC_GPIO0->FIODIR =	0x00180FF0;
-	
+
 	while(1)
 	{
 		LPC_GPIO0->FIOSET |= ALLDISP;
 		LPC_GPIO0->FIOCLR =	0x00000FF0;               // Clear data lines to displays
 		LPC_GPIO0->FIOSET = display[switchCount - 1];     // Get the 7-segment display value from array
-				
+
 		for(i = 0; i < 3; i++)
-			for(delay = 0; delay < 3000000; delay++);   
+			for(delay = 0; delay < 3000000; delay++);
 				switchCount--;
 
 		if(switchCount == 0)                       // If 0 to F has been displayed, reset to 0
