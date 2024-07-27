@@ -1,0 +1,11 @@
+---
+type Props = {
+	size: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+};
+
+const { size } = Astro.props;
+---
+
+<div class:list={['mx-auto h-full w-full px-5', `max-w-screen-${size}`]}>
+	<slot />
+</div>

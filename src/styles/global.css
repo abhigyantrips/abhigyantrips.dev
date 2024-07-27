@@ -105,53 +105,42 @@
 }
 
 @layer base {
+	/* DM Serif Display */
 	@font-face {
-		font-family: 'Manrope';
-		src: url('/fonts/Manrope-ExtraLight.woff2') format('woff2');
-		font-weight: 200;
-		font-style: normal;
-	}
-
-	@font-face {
-		font-family: 'Manrope';
-		src: url('/fonts/Manrope-Light.woff2') format('woff2');
-		font-weight: 300;
-		font-style: normal;
-	}
-
-	@font-face {
-		font-family: 'Manrope';
-		src: url('/fonts/Manrope-Regular.woff2') format('woff2');
+		font-family: 'DM Serif Display', serif;
 		font-weight: 400;
 		font-style: normal;
 	}
 
 	@font-face {
-		font-family: 'Manrope';
-		src: url('/fonts/Manrope-Medium.woff2') format('woff2');
-		font-weight: 500;
+		font-family: 'DM Serif Display', serif;
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	/* Charis SIL */
+	@font-face {
+		font-family: 'Charis SIL', serif;
+		font-weight: 400;
 		font-style: normal;
 	}
 
 	@font-face {
-		font-family: 'Manrope';
-		src: url('/fonts/Manrope-SemiBold.woff2') format('woff2');
-		font-weight: 600;
-		font-style: normal;
-	}
-
-	@font-face {
-		font-family: 'Manrope';
-		src: url('/fonts/Manrope-Bold.woff2') format('woff2');
+		font-family: 'Charis SIL', serif;
 		font-weight: 700;
 		font-style: normal;
 	}
 
 	@font-face {
-		font-family: 'Manrope';
-		src: url('/fonts/Manrope-ExtraBold.woff2') format('woff2');
-		font-weight: 800;
-		font-style: normal;
+		font-family: 'Charis SIL', serif;
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Charis SIL', serif;
+		font-weight: 700;
+		font-style: italic;
 	}
 }
 
