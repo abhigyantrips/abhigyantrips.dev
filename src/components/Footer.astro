@@ -42,49 +42,35 @@ import Container from '@/components/Container.astro';
 		</section>
 
 		<section class='overflow-hidden whitespace-nowrap border-t px-2 py-5'>
-			<Container size='xl'>
-				<div class='grid h-full grid-cols-1 items-center gap-3 sm:grid-cols-2'>
-					<div class='text-sm'>
-						Copyright {new Date().getFullYear()} &copy;
-						<a
-							href={Astro.site}
-							class='font-bold no-underline underline-offset-2 hover:underline'
-							>{SITE.AUTHOR}</a
-						>
-					</div>
+			<div class='container grid h-full grid-cols-1 items-center gap-3 sm:grid-cols-2'>
+				<div class='text-sm'>
+					Copyright {new Date().getFullYear()} &copy;
+					<a
+						href={Astro.site}
+						class='font-bold no-underline underline-offset-2 hover:underline'
+						>{SITE.AUTHOR}</a
+					>
+				</div>
 
-					<div class='order-1 flex justify-center sm:order-2 sm:justify-end'>
-						<div class='flex flex-wrap items-center justify-center gap-1'>
-							{
-								SOCIALS.map((SOCIAL) => (
-									<a
-										href={SOCIAL.HREF}
-										target='_blank'
-										aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-										class='blend group size-10 items-center justify-center rounded-full p-2 hover:bg-foreground/10'
-									>
-										<svg class='blend size-full fill-current group-hover:fill-primary'>
-											<use href={`/socials.svg#${SOCIAL.ICON}`} />
-										</svg>
-									</a>
-								))
-							}
-							<button
-								id='footer-theme-button'
-								aria-label={`Toggle light and dark theme`}
-								class='blend group size-10 items-center justify-center rounded-full fill-foreground p-2 hover:bg-black/5 dark:hover:bg-white/20'
-							>
-								<svg class='block size-full dark:hidden'>
-									<use href='/ui.svg#sun'></use>
-								</svg>
-								<svg class='hidden size-full dark:block'>
-									<use href='/ui.svg#moon'></use>
-								</svg>
-							</button>
-						</div>
+				<div class='order-1 flex justify-center sm:order-2 sm:justify-end'>
+					<div class='flex flex-wrap items-center justify-center gap-1'>
+						{
+							SOCIALS.map((SOCIAL) => (
+								<a
+									href={SOCIAL.HREF}
+									target='_blank'
+									aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+									class='blend group size-10 items-center justify-center rounded-full p-2 hover:bg-foreground/10'
+								>
+									<svg class='blend size-full fill-current group-hover:fill-primary'>
+										<use href={`/socials.svg#${SOCIAL.ICON}`} />
+									</svg>
+								</a>
+							))
+						}
 					</div>
 				</div>
-			</Container>
+			</div>
 		</section>
 	</div>
 </footer>
