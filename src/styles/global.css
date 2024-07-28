@@ -149,3 +149,7 @@
 		@apply px-4;
 	}
 }
+
+.blend {
+	@apply transition-all duration-200 ease-in-out;
+}

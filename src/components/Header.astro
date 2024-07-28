@@ -10,3 +10,18 @@ import Container from '@/components/Container.astro';
 		<div class='relative h-full w-full'></div>
 	</Container>
 </header>
+<style is:inline>
+	header {
+		@apply border-b border-foreground/20;
+		@apply transition-all duration-300 ease-in-out;
+	}
+
+	header:not(.scrolled) {
+		@apply border-transparent bg-transparent;
+	}
+
+	header.scrolled {
+		@apply bg-background/40;
+		@apply saturate-100 backdrop-blur-sm;
+	}
+</style>
