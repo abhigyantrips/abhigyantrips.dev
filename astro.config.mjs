@@ -12,13 +12,13 @@ export default defineConfig({
 			applyBaseStyles: false,
 		}),
 		mdx({
-			syntaxHighlight: 'shiki',
 			shikiConfig: {
 				themes: {
-					light: 'rose-pine-dawn',
+					light: 'vitesse-dark',
 					dark: 'vitesse-dark',
 				},
 			},
+			gfm: true,
 		}),
 		solidJs(),
 	],

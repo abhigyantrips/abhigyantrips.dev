@@ -1,5 +1,7 @@
 ---
+import '@/styles/markdown.css';
 import { type CollectionEntry, getCollection } from 'astro:content';
+import { formatDate } from '@/lib/utils';
 import PageLayout from '@/layouts/PageLayout.astro';
 import Container from '@/components/Container.astro';
 
@@ -20,5 +22,16 @@ const { Content } = await entry.render();
 	title={entry.data.title}
 	description={entry.data.description}
 >
-	<Container size='md'><article class='font-serif'><Content /></article></Container>
+	<Container size='md'>
+		<div class='flex flex-col pt-16'>
+			<article
+				class='font-serif prose lg:prose-xl prose-headings:text-foreground dark:prose-invert'
+			>
+				<span class='!text-foreground/80 uppercase'>{formatDate(entry.data.pubDate)}</span>
+				<h1 class='!mb-1'>{entry.data.title}</h1>
+				<span class='!text-foreground'>{entry.data.description}</span>
+				<Content />
+			</article>
+		</div>
+	</Container>
 </PageLayout>
