@@ -1,12 +1,12 @@
 ---
 import '@/styles/markdown.css';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import { formatDate } from '@/lib/utils';
+import { formatDate, readingTime } from '@/lib/utils';
 import PageLayout from '@/layouts/PageLayout.astro';
 import Container from '@/components/Container.astro';
 
 export async function getStaticPaths() {
-	const collection = await getCollection('labs');
+	const collection = await getCollection('blog');
 
 	return collection.map((entry) => ({
 		params: { slug: entry.slug },
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 	}));
 }
 
-const { entry } = Astro.props as { entry: CollectionEntry<'labs'> };
+const { entry } = Astro.props as { entry: CollectionEntry<'blog'> };
 const { Content } = await entry.render();
 ---
 
@@ -23,7 +23,7 @@ const { Content } = await entry.render();
 	description={entry.data.description}
 >
 	<Container size='md'>
-		<div class='flex flex-col pt-16'>
+		<div class='flex flex-col pt-16 items-center justify-center'>
 			<article
 				class:list={[
 					'font-serif prose lg:prose-lg 2xl:prose-xl dark:prose-invert',
@@ -31,7 +31,9 @@ const { Content } = await entry.render();
 					'prose-a:transition-colors prose-a:duration-200 prose-a:ease-in-out hover:prose-a:text-muted-foreground',
 				]}
 			>
-				<span class='!text-foreground/80 uppercase'>{formatDate(entry.data.pubDate)}</span>
+				<span class='!text-foreground/80 uppercase'>
+					{formatDate(entry.data.pubDate)} &bull; {readingTime(entry.body)}
+				</span>
 				<h1 class='!mb-1'>{entry.data.title}</h1>
 				<span class='!text-foreground'>{entry.data.description}</span>
 				<Content />
