@@ -1,0 +1,30 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { LABS } from '@/consts';
+import CardList from '@/components/CardList.astro';
+import Container from '@/components/Container.astro';
+---
+
+<PageLayout
+	title={LABS.TITLE}
+	description={LABS.DESCRIPTION}
+>
+	<Container size='md'>
+		<div class='flex flex-col pt-16'>
+			<article
+				class:list={[
+					'font-serif prose lg:prose-lg 2xl:prose-xl dark:prose-invert',
+					'prose-headings:text-foreground prose-strong:text-foreground prose-a:text-foreground',
+					'prose-a:transition-colors prose-a:duration-200 prose-a:ease-in-out hover:prose-a:text-muted-foreground',
+				]}
+			>
+				<h1 class='!mb-1'>{LABS.TITLE}</h1>
+				<span class='!text-foreground'>{LABS.DESCRIPTION}</span>
+				<CardList
+					collection='labs'
+					path='dsa/'
+				/>
+			</article>
+		</div>
+	</Container>
+</PageLayout>

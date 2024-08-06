@@ -7,6 +7,18 @@ export const SITE: Site = {
 	AUTHOR: 'Abhigyan Tripathi'
 }
 
+// Blog
+export const BLOG: Page = {
+	TITLE: 'Blog',
+	DESCRIPTION: 'Journeys, experiences and rants, all in one place.'
+}
+
+// Labs
+export const LABS: Page = {
+	TITLE: 'Labs',
+	DESCRIPTION: 'Source code of all my lab practicals, for people to "inspire" from.'
+}
+
 // Projects
 export const PROJECTS: Page = {
 	TITLE: 'Projects',

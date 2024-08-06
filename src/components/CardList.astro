@@ -1,0 +1,22 @@
+---
+import { getCollection, type ContentCollectionKey } from 'astro:content';
+
+type Props = {
+	collection: ContentCollectionKey;
+	path: string;
+};
+
+const { collection, path } = Astro.props;
+
+const entries = await getCollection(collection, ({ slug }) => {
+	return slug.startsWith(path);
+});
+---
+
+<>
+	{
+		entries.map((entry) => {
+			return <p>{entry.slug}</p>;
+		})
+	}
+</>
