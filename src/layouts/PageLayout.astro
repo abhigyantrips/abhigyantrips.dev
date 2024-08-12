@@ -8,9 +8,10 @@ import { SITE } from '@/consts';
 type Props = {
 	title: string;
 	description: string;
+	section?: string;
 };
 
-const { title, description } = Astro.props;
+const { title, description, section } = Astro.props;
 ---
 
 <html lang='en'>
@@ -21,7 +22,7 @@ const { title, description } = Astro.props;
 		/>
 	</head>
 	<body>
-		<Header />
+		<Header section={section} />
 		<main class='flex flex-1 flex-col bg-background'>
 			<slot />
 		</main>

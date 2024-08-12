@@ -8,18 +8,20 @@ import Container from '@/components/Container.astro';
 <PageLayout
 	title={LABS.TITLE}
 	description={LABS.DESCRIPTION}
+	section={LABS.TITLE.toLowerCase()}
 >
 	<Container size='md'>
 		<div class='flex flex-col pt-16'>
 			<article
 				class:list={[
-					'font-serif prose lg:prose-lg 2xl:prose-xl dark:prose-invert',
+					'font-serif prose lg:prose-lg 2xl:prose-xl dark:prose-invert max-w-full',
 					'prose-headings:text-foreground prose-strong:text-foreground prose-a:text-foreground',
 					'prose-a:transition-colors prose-a:duration-200 prose-a:ease-in-out hover:prose-a:text-muted-foreground',
 				]}
 			>
 				<h1 class='!mb-1'>{LABS.TITLE}</h1>
 				<span class='!text-foreground'>{LABS.DESCRIPTION}</span>
+				<h2></h2>
 				<CardList
 					collection='labs'
 					path='dsa/'
