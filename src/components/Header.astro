@@ -1,5 +1,9 @@
 ---
-import Container from '@/components/Container.astro';
+type Props = {
+	section?: string;
+};
+
+const { section } = Astro.props;
 ---
 
 <header
@@ -8,19 +12,24 @@ import Container from '@/components/Container.astro';
 >
 	<div class='flex flex-row items-center space-x-0.5 p-2'>
 		<p class='font-heading text-2xl'>abhi.</p>
-		<svg
-			height='32'
-			role='separator'
-			viewBox='0 0 32 32'
-			width='32'
-			><path
-				d='M22 5L9 28'
-				stroke-linecap='round'
-				stroke-linejoin='round'
-				class='stroke-foreground/75'
-			></path>
-		</svg>
-		<p class='font-heading text-2xl'>labs</p>
+		{
+			section && (
+				<svg
+					height='32'
+					role='separator'
+					viewBox='0 0 32 32'
+					width='32'
+				>
+					<path
+						d='M22 5L9 28'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						class='stroke-foreground/75'
+					/>
+				</svg>
+				<p class='font-heading text-2xl'>{section}</p>
+			)
+		}
 	</div>
 	<div class='flex gap-2 p-2'>
 		<button

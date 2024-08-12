@@ -1,0 +1,24 @@
+---
+type Props = {
+	title: string;
+	description: string;
+	path: string;
+};
+
+const { title, description, path } = Astro.props;
+---
+
+<a
+	class='!w-full blend hover:bg-foreground/10 not-prose flex items-center justify-start border gap-4 rounded-sm mt-20 p-4'
+	href={path}
+>
+	<div>
+		<svg class='blend size-12 stroke-current'>
+			<use href='/ui.svg#file'></use>
+		</svg>
+	</div>
+	<div class='flex justify-center items-start flex-col'>
+		<b>{title}</b>
+		<span class='text-sm text-muted-foreground'>{description}</span>
+	</div>
+</a>
