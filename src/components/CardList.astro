@@ -1,5 +1,6 @@
 ---
 import { getCollection, type ContentCollectionKey } from 'astro:content';
+import Card from './Card.astro';
 
 type Props = {
 	collection: ContentCollectionKey;
@@ -13,10 +14,16 @@ const entries = await getCollection(collection, ({ slug }) => {
 });
 ---
 
-<>
+<div class='grid grid-cols-2 grid-flow-row gap-4'>
 	{
 		entries.map((entry) => {
-			return <p>{entry.slug}</p>;
+			return (
+				<Card
+					title={entry.data.title}
+					description={entry.data.description}
+					href={`/${collection}/${entry.slug}`}
+				/>
+			);
 		})
 	}
-</>
+</div>
