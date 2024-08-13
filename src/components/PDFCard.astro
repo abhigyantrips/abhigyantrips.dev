@@ -9,16 +9,18 @@ const { title, description, path } = Astro.props;
 ---
 
 <a
-	class='!w-full blend hover:bg-foreground/10 not-prose flex items-center justify-start border gap-4 rounded-sm mt-20 p-4'
 	href={path}
+	target='_blank'
+	rel='noopener noreferrer'
+	class='w-full not-prose border rounded-md group blend bg-background/80 hover:bg-foreground/10 space-x-4 flex items-center p-2'
 >
 	<div>
-		<svg class='blend size-12 stroke-current'>
+		<svg class='blend size-12 text-muted-foreground group-hover:text-primary pl-2'>
 			<use href='/ui.svg#file'></use>
 		</svg>
 	</div>
 	<div class='flex justify-center items-start flex-col'>
-		<b>{title}</b>
-		<span class='text-sm text-muted-foreground'>{description}</span>
+		<h2 class='font-bold text-xl'>{title}</h2>
+		<p class='text-foreground/80 text-sm'>{description}</p>
 	</div>
 </a>
