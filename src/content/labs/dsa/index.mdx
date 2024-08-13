@@ -5,3 +5,18 @@ pubDate: 05-11-23
 tags:
 	- labs/4th-sem
 ---
+
+import CardList from '@/components/CardList.astro';
+import PDFCard from '@/components/PDFCard.astro';
+
+## Lab Manual
+
+<PDFCard
+	title="DSA Lab Manual"
+	description="Distributed by Manipal Institute of Technology, Bengaluru."
+	path="/files/dsa-lab-manual.pdf"
+/>
+
+## Table of Contents
+
+<CardList collection="labs" path="dsa/" />
