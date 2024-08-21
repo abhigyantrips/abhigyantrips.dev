@@ -95,11 +95,20 @@
 	* {
 		@apply border-border;
 	}
+
 	body {
 		@apply bg-background text-foreground;
 		font-feature-settings:
 			'rlig' 1,
 			'calt' 1;
+	}
+
+	::selection {
+		@apply bg-primary text-primary-foreground;
+	}
+
+	::-moz-selection {
+		@apply bg-primary text-primary-foreground;
 	}
 }
 
