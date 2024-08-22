@@ -23,17 +23,19 @@ if (entry.data.tags) {
 >
 	<div class='flex w-full justify-between'>
 		<div class='flex space-y-2 flex-col items-start'>
-			<div class='flex flex-wrap'>
-				{
-					tags.map((tag) => {
-						return (
-							<div class='py-0.5 px-1 mr-1 rounded-sm uppercase text-xs bg-foreground/10'>
-								{tag.data.name}
-							</div>
-						);
-					})
-				}
-			</div>
+			{
+				tags.length !== 0 && (
+					<div class='flex flex-wrap'>
+						{tags.map((tag) => {
+							return (
+								<div class='py-0.5 px-1 mr-1 rounded-sm uppercase text-xs bg-foreground/10'>
+									{tag.data.name}
+								</div>
+							);
+						})}
+					</div>
+				)
+			}
 			<h2 class='font-bold text-xl text-foreground'>{entry.data.title}</h2>
 			<p class='text-foreground/75 text-sm'>{entry.data.description}</p>
 		</div>
