@@ -6,6 +6,7 @@ tags:
 	- labs/5th-sem
 ---
 
+import CardList from '@/components/CardList.astro';
 import PDFCard from '@/components/PDFCard.astro';
 
 ## Lab Manual
@@ -15,3 +16,7 @@ import PDFCard from '@/components/PDFCard.astro';
 	description="Distributed by Manipal Institute of Technology, Bengaluru."
 	path="/files/os-lab-manual.pdf"
 />
+
+## Table of Contents
+
+<CardList collection="labs" path="os/" />
