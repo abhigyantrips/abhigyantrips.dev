@@ -162,3 +162,33 @@ def menu():
 if __name__ == "__main__":
     menu()
 ```
+
+## Output
+
+```
+CPU Scheduling Algorithms:
+1. First Come First Serve
+2. Shortest Job First
+3. Shortest Remaining Time First
+4. Round Robin
+5. Priority Scheduling
+6. Exit
+Enter your choice: 1
+
+Enter the number of processes: 3
+Process 1 Arrival Time: 0
+Process 1 Burst Time: 5
+Process 1 Priority: 2
+Process 2 Arrival Time: 3
+Process 2 Burst Time: 8
+Process 2 Priority: 1
+Process 3 Arrival Time: 2
+Process 3 Burst Time: 4
+Process 3 Priority: 5
+
+First Come First Serve Scheduling Results:
+PID     Arrival Burst   Completion      Waiting Turnaround
+1       0       5       5               0       5
+3       2       4       9               3       7
+2       3       8       17              6       14
+```
