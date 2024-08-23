@@ -1,5 +1,5 @@
 ---
-title: First Lab
+title: TCP Client-Server
 description: Observe the interaction of the client and the server.
 pubDate: '02-08-2024'
 ---
@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
 	close(newsockfd);
 	// Close listening socket.
 	close(serverfd);
-	
+
 	return 0;
 }
 ```
@@ -125,7 +125,7 @@ int main(int argc, char const *argv[])
 
 	// Close connection socket.
 	close(clientfd);
-	
+
 	return 0;
 }
 ```
