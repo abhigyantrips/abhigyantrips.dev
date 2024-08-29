@@ -10,13 +10,9 @@ const entries = await getCollection('labs', ({ slug }) => {
 });
 ---
 
-<PageLayout
-	title={LABS.TITLE}
-	description={LABS.DESCRIPTION}
-	section={LABS.TITLE.toLowerCase()}
->
-	<Container size='md'>
-		<div class='flex flex-col pt-16'>
+<PageLayout title={LABS.TITLE} description={LABS.DESCRIPTION} section={LABS.TITLE.toLowerCase()}>
+	<Container size="md">
+		<div class="flex flex-col pt-16">
 			<article
 				class:list={[
 					'font-serif prose lg:prose-lg 2xl:prose-xl dark:prose-invert max-w-full',
@@ -24,10 +20,10 @@ const entries = await getCollection('labs', ({ slug }) => {
 					'prose-a:transition-colors prose-a:duration-200 prose-a:ease-in-out hover:prose-a:text-muted-foreground',
 				]}
 			>
-				<h1 class='!mb-1'>{LABS.TITLE}</h1>
-				<span class='!text-foreground'>{LABS.DESCRIPTION}</span>
+				<h1 class="!mb-1">{LABS.TITLE}</h1>
+				<span class="!text-foreground">{LABS.DESCRIPTION}</span>
 				<h2></h2>
-				<div class='grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-4'>
+				<div class="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-4">
 					{
 						entries.map((entry) => {
 							return <Card entry={entry} />;

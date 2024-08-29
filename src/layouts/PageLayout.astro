@@ -14,16 +14,13 @@ type Props = {
 const { title, description, section } = Astro.props;
 ---
 
-<html lang='en'>
+<html lang="en">
 	<head>
-		<BaseHead
-			title={`${title} | ${SITE.TITLE}`}
-			description={description}
-		/>
+		<BaseHead title={`${title} | ${SITE.TITLE}`} description={description} />
 	</head>
 	<body>
 		<Header section={section} />
-		<main class='flex flex-1 flex-col bg-background min-h-[calc(100vh_-_theme(spacing.56))]'>
+		<main class="flex flex-1 flex-col bg-background min-h-[calc(100vh_-_theme(spacing.56))]">
 			<slot />
 		</main>
 		<Footer />

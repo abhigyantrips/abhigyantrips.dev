@@ -19,16 +19,16 @@ if (entry.data.tags) {
 
 <a
 	href={`/${entry.collection}/${entry.slug}`}
-	class='w-full not-prose border rounded-md group blend bg-background/80 hover:bg-foreground/10 space-y-2 flex p-4'
+	class="w-full not-prose border rounded-md group blend bg-background/80 hover:bg-foreground/10 space-y-2 flex p-4"
 >
-	<div class='flex w-full justify-between'>
-		<div class='flex space-y-2 flex-col items-start'>
+	<div class="flex w-full justify-between">
+		<div class="flex space-y-2 flex-col items-start">
 			{
 				tags.length !== 0 && (
-					<div class='flex flex-wrap'>
+					<div class="flex flex-wrap">
 						{tags.map((tag) => {
 							return (
-								<div class='py-0.5 px-1 mr-1 rounded-sm uppercase text-xs bg-foreground/10'>
+								<div class="py-0.5 px-1 mr-1 rounded-sm uppercase text-xs bg-foreground/10">
 									{tag.data.name}
 								</div>
 							);
@@ -36,11 +36,11 @@ if (entry.data.tags) {
 					</div>
 				)
 			}
-			<h2 class='font-bold text-xl text-foreground'>{entry.data.title}</h2>
-			<p class='text-foreground/75 text-sm'>{entry.data.description}</p>
+			<h2 class="font-bold text-xl text-foreground">{entry.data.title}</h2>
+			<p class="text-foreground/75 text-sm">{entry.data.description}</p>
 		</div>
-		<svg class='size-5 ml-1 flex-none text-foreground/50 group-hover:text-muted-foreground'>
-			<use href='/ui.svg#open'></use>
+		<svg class="size-5 ml-1 flex-none text-foreground/50 group-hover:text-muted-foreground">
+			<use href="/ui.svg#open"></use>
 		</svg>
 	</div>
 </a>
