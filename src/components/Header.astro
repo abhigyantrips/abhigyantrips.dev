@@ -11,29 +11,37 @@ const { section } = Astro.props;
 	class='container flex h-16 w-full flex-row items-center justify-between border-b'
 >
 	<div class='flex flex-row items-center space-x-0.5 p-2'>
-		<a 
-		href={Astro.site}
-		rel="noopener noreferrer"
-		class='font-heading text-2xl blend hover:text-foreground/75'
-	>
-		abhi.
-	</a>
+		<a
+			href={Astro.site}
+			rel='noopener noreferrer'
+			class='font-heading text-2xl blend hover:text-foreground/75'
+		>
+			abhi.
+		</a>
 		{
 			section && (
-				<svg
-					height='32'
-					role='separator'
-					viewBox='0 0 32 32'
-					width='32'
-				>
-					<path
-						d='M22 5L9 28'
-						stroke-linecap='round'
-						stroke-linejoin='round'
-						class='stroke-foreground/75'
-					/>
-				</svg>
-				<a href={`/${section}`} rel="noopener noreferrer" class='font-heading text-2xl blend hover:text-foreground/75'>{section}</a>
+				<>
+					<svg
+						height='32'
+						role='separator'
+						viewBox='0 0 32 32'
+						width='32'
+					>
+						<path
+							d='M22 5L9 28'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							class='stroke-foreground/75'
+						/>
+					</svg>
+					<a
+						href={`/${section}`}
+						rel='noopener noreferrer'
+						class='font-heading text-2xl blend hover:text-foreground/75'
+					>
+						{section}
+					</a>
+				</>
 			)
 		}
 	</div>
