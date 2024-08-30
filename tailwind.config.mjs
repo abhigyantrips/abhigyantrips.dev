@@ -100,7 +100,13 @@ const config = {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
+	plugins: [
+		function ({ addVariant }) {
+			addVariant('firefox', ':-moz-any(&)');
+		},
+		require('@tailwindcss/typography'),
+		require('tailwindcss-animate'),
+	],
 };
 
 export default config;
