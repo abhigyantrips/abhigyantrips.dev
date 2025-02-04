@@ -6,6 +6,7 @@ tags:
 	- labs/6th-sem
 ---
 
+import CardList from '@/components/CardList.astro';
 import PDFCard from '@/components/PDFCard.astro';
 
 ## Lab Manual
@@ -16,6 +17,6 @@ import PDFCard from '@/components/PDFCard.astro';
 	path="/files/ac-lab-manual.pdf"
 />
 
-## Experiments
+## Table of Contents
 
-Too lazy to upload anything so far.
+<CardList collection="labs" path="ac/" />
